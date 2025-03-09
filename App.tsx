@@ -1,7 +1,7 @@
 import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { HomeProfile } from 'components/HomeProfile';
+import { BottomTab } from 'components/BottomTab';
 import { useFonts } from 'expo-font';
 import { View, StatusBar } from 'react-native';
 import './global.css';
@@ -22,11 +22,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <View className="h-full bg-[#026a75]">
-        <Tab.Navigator screenOptions={{ headerShown: false }}>
-          <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Advisor" component={AdvisorScreen} />
-          <Tab.Screen name="History" component={HistoryScreen} />
-          <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Navigator
+          tabBar={(props) => <BottomTab {...props} />}
+          screenOptions={{ headerShown: false }}>
+          <Tab.Screen name="home" component={HomeScreen} />
+          <Tab.Screen name="advisor" component={AdvisorScreen} />
+          <Tab.Screen name="history" component={HistoryScreen} />
+          <Tab.Screen name="profile" component={ProfileScreen} />
         </Tab.Navigator>
       </View>
       <StatusBar backgroundColor={color} />

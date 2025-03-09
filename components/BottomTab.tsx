@@ -4,7 +4,7 @@ import { LayoutChangeEvent, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 import { TabBarButton } from './TabBarButton';
-export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+export function BottomTab({ state, descriptors, navigation }: BottomTabBarProps) {
   const [dimensions, setDimensions] = useState({ height: 20, width: 100 });
   const buttonWidth = dimensions.width / state.routes.length;
   const onTabbarLayout = (e: LayoutChangeEvent) => {
@@ -24,13 +24,15 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     };
   });
   return (
-    <View onLayout={onTabbarLayout} style={styles.tabBar}>
+    <View
+      onLayout={onTabbarLayout}
+      className=" absolute bottom-10 mx-16 flex-row items-center overflow-hidden rounded-3xl bg-white shadow-black ">
       <Animated.View
         style={[
           animatedStyle,
           {
             position: 'absolute',
-            backgroundColor: originalColor,
+            backgroundColor: '#026a75',
             marginHorizontal: 7,
             height: dimensions.height - 15,
             width: buttonWidth - 15,

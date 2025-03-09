@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable } from 'react-native';
 import Animated, {
   interpolate,
   useAnimatedStyle,
@@ -7,9 +7,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 
-import { styles } from './tabBarButton.styles';
-import { icon } from '../../constants/icon';
-import { originalColor } from '../../layout/authLayout/authWrapper.styles';
+import { icon } from '../constants/icon';
 interface TabBarButtonProps {
   onPress: Function;
   onLongPress: Function;
@@ -49,9 +47,12 @@ export const TabBarButton = ({
     });
   }, [scale, isFocused]);
   return (
-    <Pressable onPress={onPress} onLongPress={onLongPress} style={[styles.tabBarContainer]}>
+    <Pressable
+      onPress={onPress}
+      onLongPress={onLongPress}
+      className=" h-16 flex-1 items-center justify-center rounded-full">
       <Animated.View style={[iconSize]}>{icon[routeName]({ color })}</Animated.View>
-      <Animated.Text style={[{ color }, styles.tabBarText, animatedTextStyle]}>
+      <Animated.Text style={[{ color }, animatedTextStyle]} className="mt-1 text-xs">
         {label}
       </Animated.Text>
     </Pressable>
