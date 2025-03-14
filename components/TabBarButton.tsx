@@ -52,7 +52,7 @@ export const TabBarButton = ({
       onLongPress={onLongPress}
       className=" h-16 flex-1 items-center justify-center rounded-full">
       <Animated.View style={[iconSize]}>{icon[routeName]({ color })}</Animated.View>
-      <Animated.Text style={[{ color }, animatedTextStyle]} className="mt-1 text-xs">
+      <Animated.Text style={[{ color }, animatedTextStyle]} className="text-sm">
         {label}
       </Animated.Text>
     </Pressable>
