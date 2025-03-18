@@ -26,7 +26,7 @@ export function BottomTab({ state, descriptors, navigation }: BottomTabBarProps)
   return (
     <View
       onLayout={onTabbarLayout}
-      className=" absolute bottom-10 mx-16 flex-row items-center overflow-hidden rounded-3xl bg-white shadow-black ">
+      className=" absolute bottom-10 mx-16 flex-row items-center overflow-hidden rounded-3xl bg-black/50 shadow-black ">
       <Animated.View
         style={[
           animatedStyle,

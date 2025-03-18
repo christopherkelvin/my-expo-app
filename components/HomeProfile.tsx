@@ -10,7 +10,7 @@ interface HomeProfileProps {
 export const HomeProfile = ({ userName }: HomeProfileProps) => {
   const useTodayDate: string = UseTodayDate();
   return (
-    <View className="m-5 mt-0 flex-row items-center justify-between rounded-3xl bg-white p-2">
+    <View className="m-5 mt-0 flex-row items-center justify-between rounded-3xl bg-black/30 p-2">
       <Image source={avator} className="h-14 w-14 overflow-hidden rounded-full" />
       <View className="flex flex-col items-center ">
         <Text className="font-nunito-bold">Hello , {userName}</Text>
