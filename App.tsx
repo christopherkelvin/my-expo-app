@@ -31,7 +31,7 @@ export default function App() {
           <Tab.Screen name="profile" component={ProfileScreen} />
         </Tab.Navigator>
       </View>
-      <StatusBar backgroundColor={colors.secondary} barStyle="dark-content" />
+      <StatusBar backgroundColor={colors.main} barStyle="light-content" />
     </NavigationContainer>
   );
 }

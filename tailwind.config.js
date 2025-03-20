@@ -10,7 +10,7 @@ module.exports = {
         'nunito-bold': ['Nunito_700Bold'],
       },
       colors: {
-        secondary: '#F4F7F9',
+        secondary: '#F2E9E4',
         primary: '#3A3D40',
         main: '#026a75',
       },
