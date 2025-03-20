@@ -9,6 +9,11 @@ module.exports = {
         nunito: ['Nunito_400Regular'],
         'nunito-bold': ['Nunito_700Bold'],
       },
+      colors: {
+        secondary: '#F4F7F9',
+        primary: '#3A3D40',
+        main: '#026a75',
+      },
     },
   },
   plugins: [],

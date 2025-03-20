@@ -1,4 +1,5 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import colors from 'constants/colors';
 import { useState } from 'react';
 import { LayoutChangeEvent, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
@@ -26,13 +27,13 @@ export function BottomTab({ state, descriptors, navigation }: BottomTabBarProps)
   return (
     <View
       onLayout={onTabbarLayout}
-      className=" absolute bottom-10 mx-16 flex-row items-center overflow-hidden rounded-3xl bg-black/50 shadow-black ">
+      className=" bg-primary absolute bottom-10 mx-16 flex-row items-center overflow-hidden rounded-3xl shadow-black ">
       <Animated.View
         style={[
           animatedStyle,
           {
             position: 'absolute',
-            backgroundColor: '#026a75',
+            backgroundColor: colors.secondary,
             marginHorizontal: 7,
             height: dimensions.height - 15,
             width: buttonWidth - 15,
@@ -80,7 +81,7 @@ export function BottomTab({ state, descriptors, navigation }: BottomTabBarProps)
             onLongPress={onLongPress}
             isFocused={isFocused}
             routeName={route.name}
-            color={isFocused ? 'white' : 'black'}
+            color={isFocused ? 'black' : colors.secondary}
             label={label}
           />
         );

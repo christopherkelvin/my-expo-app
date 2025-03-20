@@ -9,9 +9,9 @@ import { AdvisorScreen } from 'screens/advisorScreen';
 import { HistoryScreen } from 'screens/historyScreen';
 import { HomeScreen } from 'screens/homeScreen';
 import { ProfileScreen } from 'screens/profileScreen';
+import colors from 'constants/colors';
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const color = '#026a75';
   const [fontsLoaded] = useFonts({
     Nunito_400Regular,
     Nunito_700Bold,
@@ -21,7 +21,7 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <View className="h-full bg-[#026a75]">
+      <View className="h-full">
         <Tab.Navigator
           tabBar={(props) => <BottomTab {...props} />}
           screenOptions={{ headerShown: false }}>
@@ -31,7 +31,7 @@ export default function App() {
           <Tab.Screen name="profile" component={ProfileScreen} />
         </Tab.Navigator>
       </View>
-      <StatusBar backgroundColor={color} />
+      <StatusBar backgroundColor={colors.secondary} barStyle="dark-content" />
     </NavigationContainer>
   );
 }
