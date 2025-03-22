@@ -6,9 +6,9 @@ import avator from '../assets/profile.jpg';
 import colors from '../constants/colors';
 interface HomeProfileProps {
   userName: string;
+  navigation: any;
 }
-
-export const HomeProfile = ({ userName }: HomeProfileProps) => {
+export const HomeProfile = ({ userName, navigation }: HomeProfileProps) => {
   const useTodayDate: string = UseTodayDate();
   return (
     <View className="mx-5 my-5 flex-row items-center justify-between rounded-3xl bg-primary/80 p-2">
@@ -20,7 +20,7 @@ export const HomeProfile = ({ userName }: HomeProfileProps) => {
         <Text className="font-nunito-bold text-secondary">Hello , {userName}</Text>
         <Text className="text-secondary">{useTodayDate}</Text>
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
         <Feather name="settings" size={26} color={colors.secondary} className="pr-5" />
       </TouchableOpacity>
     </View>
