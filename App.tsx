@@ -30,7 +30,7 @@ export default function App() {
         <Tab.Screen name="home" component={HomeNavigationHandler} />
         <Tab.Screen name="advisor" component={AdvisorScreen} />
         <Tab.Screen name="history" component={HistoryScreen} />
-        <Tab.Screen name="profile" component={ProfileScreen} />
+        {/* <Tab.Screen name="profile" component={ProfileScreen} /> */}
       </Tab.Navigator>
       <StatusBar backgroundColor={colors.main} barStyle="light-content" />
     </NavigationContainer>
