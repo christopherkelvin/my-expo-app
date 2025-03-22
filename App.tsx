@@ -5,11 +5,11 @@ import { BottomTab } from 'components/BottomTab';
 import { HomeNavigationHandler } from 'components/HomeNavigationHandler';
 import colors from 'constants/colors';
 import { useFonts } from 'expo-font';
-import { View, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import './global.css';
 import { AdvisorScreen } from 'screens/advisorScreen';
 import { HistoryScreen } from 'screens/historyScreen';
-import { ProfileScreen } from 'screens/profileScreen';
+// import { ProfileScreen } from 'screens/profileScreen';
 
 export default function App() {
   const Tab = createBottomTabNavigator();

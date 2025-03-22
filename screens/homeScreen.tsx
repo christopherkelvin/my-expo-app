@@ -7,22 +7,22 @@ import { RobotStatus } from 'components/RobotStatus';
 import { WaveSvg } from 'components/WaveSvg';
 import { AdvertisementData } from 'constants/advertisements.data';
 import colors from 'constants/colors';
-import { UseUserName } from 'hooks/useDetails';
+import { useUserDetails } from 'hooks/useDetails';
 import React from 'react';
-import { View, FlatList, Dimensions } from 'react-native';
+import { View, FlatList, Dimensions, Text } from 'react-native';
 
 interface HomeScreenProps {
   navigation: StackNavigationProp<any>;
 }
 
 export const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const userName: string = UseUserName();
   const windowHeight = Dimensions.get('window').height;
+  const userDetails = useUserDetails();
 
   return (
     <View style={{ backgroundColor: colors.secondary, height: windowHeight }}>
       <WaveSvg />
-      <HomeProfile userName={userName} navigation={navigation} /> {/* Pass navigation prop */}
+      <HomeProfile userName={userDetails[0]?.name} navigation={navigation} />
       <FlatList
         data={AdvertisementData}
         horizontal
@@ -30,6 +30,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
         showsHorizontalScrollIndicator={false}
         bounces={false}
         renderItem={({ item }) => <HomeImages data={item} />}
+        keyExtractor={(item) => item.id.toString()} // Ensure each item has a unique key
       />
       <HorizontalLine />
       <HomeQuickNavigator />
