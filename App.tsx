@@ -9,7 +9,6 @@ import { StatusBar } from 'react-native';
 import './global.css';
 import { AdvisorScreen } from 'screens/advisorScreen';
 import { HistoryScreen } from 'screens/historyScreen';
-// import { ProfileScreen } from 'screens/profileScreen';
 
 export default function App() {
   const Tab = createBottomTabNavigator();
