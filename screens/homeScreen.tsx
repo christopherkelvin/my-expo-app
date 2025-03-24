@@ -30,7 +30,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
         flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
         return nextIndex;
       });
-    }, 10000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
