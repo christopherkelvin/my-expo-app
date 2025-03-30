@@ -49,7 +49,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
         keyExtractor={(item) => item.id.toString()} // Ensure each item has a unique key
       />
       <HorizontalLine />
-      <HomeQuickNavigator />
+      <HomeQuickNavigator navigation={navigation} />
       <HorizontalLine />
       <RobotStatus />
     </View>
