@@ -1,8 +1,12 @@
+import { StackNavigationProp } from '@react-navigation/stack';
 import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image, View } from 'react-native';
 
 import tree from '../assets/tomato-tree.png';
-export const Login = () => {
+interface LoginScreenProps {
+  navigation: StackNavigationProp<any>;
+}
+export const Login = ({ navigation }: LoginScreenProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
@@ -37,7 +41,7 @@ export const Login = () => {
       </TouchableOpacity>
       <View className="flex-row items-center justify-center gap-3">
         <Text className="text-center text-lg">Don't have an account ?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
           <Text className="text-lg text-main">Register</Text>
         </TouchableOpacity>
       </View>

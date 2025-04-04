@@ -1,4 +1,6 @@
 import { View, Text } from 'react-native';
+
+
 export const LoginAdvertisement = () => {
   return (
     <View
