@@ -6,6 +6,7 @@ import { BottomTab } from 'components/BottomTab';
 import { HomeNavigationHandler } from 'components/HomeNavigationHandler';
 import colors from 'constants/colors';
 import { useFonts } from 'expo-font';
+import { useLogin } from 'hooks/useLogin';
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
 import './global.css';
@@ -16,15 +17,11 @@ import { RegisterScreen } from 'screens/registerScreen';
 export default function App() {
   const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator();
-  const [user, setUser] = useState<boolean>(true);
+  const { user } = useLogin();
   const [fontsLoaded] = useFonts({
     Nunito_400Regular,
     Nunito_700Bold,
   });
-  useEffect(() => {
-    setUser(false);
-  }, [user]);
-
   if (!fontsLoaded) {
     return null;
   }

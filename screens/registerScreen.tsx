@@ -1,13 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Register } from 'components/Register';
 import { AuthLayout } from 'layouts/authLayout';
-import { Text } from 'react-native';
-interface HomeScreenProps {
-  navigation: StackNavigationProp<any>;
-}
 
 export const RegisterScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<any>>();
   return (
     <AuthLayout>
-      <Text>Regiter Hello</Text>
+      <Register navigation={navigation} />
     </AuthLayout>
   );
 };
