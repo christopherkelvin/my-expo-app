@@ -5,26 +5,44 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BottomTab } from 'components/BottomTab';
 import { HomeNavigationHandler } from 'components/HomeNavigationHandler';
 import colors from 'constants/colors';
+import { AuthProvider, AuthContext } from 'context/AuthContext'; // ✅ wrap in provider
 import { useFonts } from 'expo-font';
-import { useLogin } from 'hooks/useLogin';
-import { useEffect, useState } from 'react';
-import { StatusBar } from 'react-native';
+import { useContext } from 'react';
+import { ActivityIndicator, StatusBar, View } from 'react-native';
 import './global.css';
 import { AdvisorScreen } from 'screens/advisorScreen';
 import { HistoryScreen } from 'screens/historyScreen';
 import { LoginScreen } from 'screens/loginScreen';
 import { RegisterScreen } from 'screens/registerScreen';
+
 export default function App() {
-  const Tab = createBottomTabNavigator();
-  const Stack = createNativeStackNavigator();
-  const { user } = useLogin();
   const [fontsLoaded] = useFonts({
     Nunito_400Regular,
     Nunito_700Bold,
   });
-  if (!fontsLoaded) {
-    return null;
+
+  if (!fontsLoaded) return null;
+
+  return (
+    <AuthProvider>
+      <MainNavigator />
+    </AuthProvider>
+  );
+}
+
+function MainNavigator() {
+  const Tab = createBottomTabNavigator();
+  const Stack = createNativeStackNavigator();
+  const { user, loading } = useContext(AuthContext);
+
+  if (loading) {
+    return (
+      <View className="flex-1 items-center justify-center">
+        <ActivityIndicator size="large" color={colors.main} />
+      </View>
+    );
   }
+
   return (
     <NavigationContainer>
       {user ? (
@@ -34,7 +52,6 @@ export default function App() {
           <Tab.Screen name="home" component={HomeNavigationHandler} />
           <Tab.Screen name="advisor" component={AdvisorScreen} />
           <Tab.Screen name="history" component={HistoryScreen} />
-          {/* <Tab.Screen name="profile" component={ProfileScreen} /> */}
         </Tab.Navigator>
       ) : (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -42,7 +59,6 @@ export default function App() {
           <Stack.Screen name="Register" component={RegisterScreen} />
         </Stack.Navigator>
       )}
-
       <StatusBar backgroundColor={colors.main} barStyle="light-content" />
     </NavigationContainer>
   );

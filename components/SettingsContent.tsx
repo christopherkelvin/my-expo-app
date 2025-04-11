@@ -2,10 +2,13 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import colors from 'constants/colors';
+import { AuthContext } from 'context/AuthContext';
+import { useContext } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 import { HorizontalLine } from './HorizontalLine';
 export const SettingsContent = () => {
+  const { logout } = useContext(AuthContext);
   return (
     <View className="mx-10">
       <Text className="font my-2 ml-4 font-nunito-bold text-main">Inventory</Text>
@@ -20,7 +23,7 @@ export const SettingsContent = () => {
           <Text className=" text-lg">Push notification</Text>
         </TouchableOpacity>
         <HorizontalLine />
-        <TouchableOpacity className="flex flex-row gap-3">
+        <TouchableOpacity className="flex flex-row gap-3" onPress={logout}>
           <AntDesign name="logout" size={24} color="red" />
           <Text className=" text-lg text-red-600">Logout</Text>
         </TouchableOpacity>

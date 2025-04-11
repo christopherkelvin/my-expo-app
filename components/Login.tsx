@@ -1,7 +1,8 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import colors from 'constants/colors';
+import { AuthContext } from 'context/AuthContext';
 import { useLogin } from 'hooks/useLogin';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import {
   Text,
   TextInput,
@@ -17,9 +18,12 @@ interface LoginScreenProps {
   navigation: StackNavigationProp<any>;
 }
 export const Login = ({ navigation }: LoginScreenProps) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { login, isLoading } = useLogin();
+  const { login: authLogin } = useContext(AuthContext);
+  const { login: doLogin, isLoading, password, setPassword, email, setEmail } = useLogin();
+  const handleLogin = async () => {
+    const userData = await doLogin(email, password);
+    if (userData) authLogin(userData);
+  };
   return (
     <KeyboardAvoidingView className=" relative flex h-full gap-5 rounded-[25px] bg-secondary p-[6%]">
       <Image
@@ -48,7 +52,7 @@ export const Login = ({ navigation }: LoginScreenProps) => {
       ) : (
         <TouchableOpacity
           className="h-14 items-center justify-center rounded-3xl bg-main"
-          onPress={() => login(email, password)}>
+          onPress={handleLogin}>
           <Text className="font-nunito-bold text-2xl text-secondary">Login</Text>
         </TouchableOpacity>
       )}
