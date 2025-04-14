@@ -1,14 +1,17 @@
 import { Image, View, Dimensions } from 'react-native';
 
-import Image1 from '../assets/AdvertiseImages/Image1.jpg';
+interface AdvisorImagesProps {
+  uri: string;
+}
 
-export const AdvisorImages = () => {
+export const AdvisorImages = ({ uri }: AdvisorImagesProps) => {
   const ScreenWidth = Dimensions.get('window').width;
   const ScreenHeight = Dimensions.get('window').height;
+
   return (
-    <View className=" items-center justify-center">
+    <View className="items-center justify-center">
       <Image
-        source={Image1}
+        source={{ uri }}
         style={{
           width: ScreenWidth * 0.9,
           height: ScreenHeight * 0.35,

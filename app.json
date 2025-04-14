@@ -9,7 +9,12 @@
     "experiments": {
       "tsconfigPaths": true
     },
-    "plugins": ["expo-font"],
+    "plugins": ["expo-font",[
+      "expo-image-picker",
+      {
+        "photosPermission": "This app accesses your photos to let you choose a profile picture."
+      }
+    ]],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
