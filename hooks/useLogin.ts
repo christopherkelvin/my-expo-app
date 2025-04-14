@@ -12,7 +12,7 @@ export const useLogin = () => {
     }
     setIsLoading(true);
     try {
-      const response = await fetch('http://192.168.0.16:4000/auth/log-in', {
+      const response = await fetch('http://192.168.0.88:4000/auth/log-in', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
