@@ -18,7 +18,7 @@ export const UseImagePicker = () => {
   const options: ImagePicker.ImagePickerOptions = {
     mediaTypes: ImagePicker.MediaTypeOptions.Images, // Deprecated-safe
     allowsEditing: true,
-    aspect: [4, 3],
+    aspect: [4, 4],
     quality: 1,
   };
 

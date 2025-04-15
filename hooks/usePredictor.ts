@@ -1,17 +1,26 @@
 import { useState } from 'react';
+
 export const UsePredictor = () => {
   const [prediction, setPrediction] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const predictImage = async (imageUri: string) => {
     setIsLoading(true);
+
+    const formData = new FormData();
+    formData.append('image', {
+      uri: imageUri,
+      type: 'image/jpeg', // change to image/png if needed
+      name: 'photo.jpg',
+    } as any); // React Native needs this cast
+
     try {
-      const response = await fetch('https://your-predictor-api-endpoint', {
+      const response = await fetch('http://192.168.0.105:4000/predict/analyze', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
         },
-        body: JSON.stringify({ imageUri }),
+        body: formData,
       });
 
       if (!response.ok) {

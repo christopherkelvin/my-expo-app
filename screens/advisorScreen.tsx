@@ -13,7 +13,7 @@ export const AdvisorScreen = () => {
       {image ? (
         <View>
           <AdvisorImages uri={image} />
-          <AdvisorContent />
+          <AdvisorContent uri={image} />
         </View>
       ) : (
         <AdvisorEmpty selectImage={selectImage} />

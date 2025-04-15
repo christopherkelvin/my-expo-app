@@ -1,18 +1,18 @@
+
 import { useState } from 'react';
 import { Alert } from 'react-native';
-
 export const useLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  
   const login = async (email: string, password: string) => {
     if (!email || !password) {
       Alert.alert('Insert Email and password');
     }
     setIsLoading(true);
     try {
-      const response = await fetch('http://192.168.0.88:4000/auth/log-in', {
+      const response = await fetch(`http://192.168.0.105:4000/auth/log-in`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
