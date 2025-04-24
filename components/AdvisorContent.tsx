@@ -36,11 +36,10 @@ export const AdvisorContent = ({ uri }: AdvisorImagesProps) => {
             </Text>
             {diseaseInfo.recommended_pesticides.map((pesticide: any, index: number) => (
               <View key={index} className="mb-3">
-                <Text className="font-nunito text-base text-white">• Name: {pesticide.name}</Text>
-                <Text className="font-nunito text-base text-white"> Type: {pesticide.type}</Text>
+                <Text className="font-nunito text-base text-white">• Jina: {pesticide.name}</Text>
+                <Text className="font-nunito text-base text-white"> Aina: {pesticide.type}</Text>
                 <Text className="font-nunito text-base text-white">
-                  {' '}
-                  Dosage: {pesticide.dosage}
+                  Dozi: {pesticide.dosage}
                 </Text>
               </View>
             ))}
@@ -48,20 +47,20 @@ export const AdvisorContent = ({ uri }: AdvisorImagesProps) => {
         )}
         {diseaseInfo?.recommended_treatment && (
           <>
-            <Text className="mb-2 font-nunito-bold text-lg text-white">Recommended Treatment:</Text>
+            <Text className="mb-2 font-nunito-bold text-lg text-white">Matibabu Yanayopendekezwa:</Text>
             <Text className="font-nunito text-base text-white">
               {diseaseInfo.recommended_treatment}
             </Text>
             {diseaseInfo?.dosage && (
               <Text className="mt-1 font-nunito text-base text-white">
-                Dosage: {diseaseInfo.dosage}
+                Dozi: {diseaseInfo.dosage}
               </Text>
             )}
           </>
         )}
         {diseaseInfo?.application_frequency && (
           <>
-            <Text className="mt-4 font-nunito-bold text-lg text-white">Application Frequency:</Text>
+            <Text className="mt-4 font-nunito-bold text-lg text-white">Marudio ya Matumizi:</Text>
             <Text className="font-nunito text-base text-white">
               {diseaseInfo.application_frequency}
             </Text>
@@ -72,7 +71,7 @@ export const AdvisorContent = ({ uri }: AdvisorImagesProps) => {
       <TouchableOpacity
         className="mx-auto mb-2 mt-6 rounded-lg bg-main px-4 py-2"
         style={{ width: '70%' }}>
-        <Text className="text-center text-lg text-white">Press for more information</Text>
+        <Text className="text-center text-lg text-white">Bonyeza kwa maelezo zaidi</Text>
       </TouchableOpacity>
     </ScrollView>
   );

@@ -15,7 +15,7 @@ export const UsePredictor = () => {
     } as any); // React Native needs this cast
 
     try {
-      const response = await fetch('http://192.168.0.105:4000/predict/analyze', {
+      const response = await fetch('http://192.168.137.1:4000/predict/analyze', {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data',

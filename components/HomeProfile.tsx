@@ -17,7 +17,7 @@ export const HomeProfile = ({ userName, navigation }: HomeProfileProps) => {
         className="h-14 w-14 overflow-hidden rounded-full border border-secondary"
       />
       <View className="flex flex-col items-center ">
-        <Text className="font-nunito-bold text-secondary">Hello , {userName}</Text>
+        <Text className="font-nunito-bold text-secondary">Habari 😊 , {userName}</Text>
         <Text className="text-secondary">{useTodayDate}</Text>
       </View>
       <TouchableOpacity onPress={() => navigation.navigate('Setting')}>

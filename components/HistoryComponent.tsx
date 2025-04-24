@@ -11,25 +11,25 @@ export const HistoryComponent = (props: any) => {
       <Image source={image} className="h-28 w-28 rounded" />
       <View className=" ml-4 flex flex-col gap-2.5">
         <Text className="text-secondary">
-          <Text className="font-nunito-bold">Assessed On :</Text> {props.date}{' '}
+          <Text className="font-nunito-bold">Ilikaguliwa Tarehe :</Text> {props.date}{' '}
         </Text>
         <Text className="text-secondary">
-          <Text className="font-nunito-bold">Time :</Text> {props.time}
+          <Text className="font-nunito-bold">Muda :</Text> {props.time}
         </Text>
         {isSick === '' ? (
-          <Text>Plant Healthy</Text>
+          <Text>Afya ya mmea</Text>
         ) : (
           <View>
             <Text className="text-secondary">
-              <Text className="font-nunito-bold">Disease: {props.disease}</Text>
+              <Text className="font-nunito-bold">Gonjwa: {props.disease}</Text>
             </Text>
             {!isTreated ? (
               <Text className="text-red-600">
-                <Text className="font-nunito-bold">Not Treated</Text>
+                <Text className="font-nunito-bold">Haujatibiwa</Text>
               </Text>
             ) : (
               <Text className="text-secondary">
-                <Text className="font-nunito-bold">Treated</Text>
+                <Text className="font-nunito-bold">Umetibiwa</Text>
               </Text>
             )}
           </View>

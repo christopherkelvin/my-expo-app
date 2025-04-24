@@ -36,7 +36,7 @@ export const Login = ({ navigation }: LoginScreenProps) => {
           right: 0,
         }}
       />
-      <Text className=" mt-16 font-nunito-bold text-4xl text-main/80">Login</Text>
+      <Text className=" mt-16 font-nunito-bold text-4xl text-main/80">Ingia</Text>
       <TextInput
         placeholder="Email"
         className=" h-14 rounded-3xl bg-white pl-5 text-lg"
@@ -53,13 +53,13 @@ export const Login = ({ navigation }: LoginScreenProps) => {
         <TouchableOpacity
           className="h-14 items-center justify-center rounded-3xl bg-main"
           onPress={handleLogin}>
-          <Text className="font-nunito-bold text-2xl text-secondary">Login</Text>
+          <Text className="font-nunito-bold text-2xl text-secondary">Ingia</Text>
         </TouchableOpacity>
       )}
       <View className="flex-row items-center justify-center gap-2">
-        <Text className="text-center text-lg">Don't have an account ?</Text>
+        <Text className="text-center text-lg">Huna akaunti?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-          <Text className="text-lg font-bold text-main">Register</Text>
+          <Text className="text-lg font-bold text-main">Jisajili</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>

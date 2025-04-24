@@ -11,7 +11,7 @@ export const Register = ({ navigation }: RegisterScreenProps) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   return (
     <KeyboardAvoidingView className=" relative flex h-full gap-5 rounded-[25px] bg-secondary p-[6%]">
-      <Text className="font-nunito-bold text-4xl text-main/80">Register</Text>
+      <Text className="font-nunito-bold text-4xl text-main/80">Jisajili</Text>
       <TextInput
         placeholder="Email"
         className=" h-14 rounded-3xl bg-white pl-5 text-lg"
@@ -28,7 +28,7 @@ export const Register = ({ navigation }: RegisterScreenProps) => {
         onChange={() => setConfirmPassword(confirmPassword)}
       />
       <TouchableOpacity className="h-14 items-center justify-center rounded-3xl bg-main">
-        <Text className="font-nunito-bold text-2xl text-secondary">Register</Text>
+        <Text className="font-nunito-bold text-2xl text-secondary">Jisajili</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );

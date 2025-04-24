@@ -10,7 +10,7 @@ export const AdvisorEmpty = ({ selectImage }: AdvisorEmptyProps) => {
       <TouchableOpacity className="rounded-lg bg-white p-5" onPress={selectImage}>
         <Text className="font-nunito">Choose Image</Text>
       </TouchableOpacity>
-      <Text className="mt-4 text-lg font-bold text-white">No data available</Text>
+      <Text className="mt-4 text-lg font-bold text-white">Hakuna taarifa iliyopo</Text>
     </View>
   );
 };

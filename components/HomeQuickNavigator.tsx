@@ -17,7 +17,7 @@ export const HomeQuickNavigator = ({ navigation }: HomeQuickNavigatorProps) => {
           <QuickButton
             key={index}
             title={button.title}
-            onPress={() => button.onPress({ navigation })} // Pass the navigation prop to the onPress function
+            onPress={() => button.onPress({ navigation })}
           />
         ))}
       </View>
