@@ -1,6 +1,7 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useState } from 'react';
 import { Text, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
+import { addUser } from '../services/UserService';
 interface RegisterScreenProps {
   navigation: StackNavigationProp<any>;
 }
@@ -27,7 +28,9 @@ export const Register = ({ navigation }: RegisterScreenProps) => {
         className=" h-14 rounded-3xl bg-white pl-5 text-lg"
         onChange={() => setConfirmPassword(confirmPassword)}
       />
-      <TouchableOpacity className="h-14 items-center justify-center rounded-3xl bg-main">
+      <TouchableOpacity
+        onPress={() => addUser(email, password)}
+        className="h-14 items-center justify-center rounded-3xl bg-main">
         <Text className="font-nunito-bold text-2xl text-secondary">Jisajili</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>

@@ -12,8 +12,9 @@ import {
   View,
   ActivityIndicator,
 } from 'react-native';
-
 import tree from '../assets/tomato-tree.png';
+import { LoginUser } from 'services/UserService';
+
 interface LoginScreenProps {
   navigation: StackNavigationProp<any>;
 }
@@ -52,7 +53,7 @@ export const Login = ({ navigation }: LoginScreenProps) => {
       ) : (
         <TouchableOpacity
           className="h-14 items-center justify-center rounded-3xl bg-main"
-          onPress={handleLogin}>
+          onPress={() => LoginUser(email, password)}>
           <Text className="font-nunito-bold text-2xl text-secondary">Ingia</Text>
         </TouchableOpacity>
       )}

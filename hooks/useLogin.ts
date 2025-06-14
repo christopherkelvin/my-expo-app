@@ -12,24 +12,27 @@ export const useLogin = () => {
     }
     setIsLoading(true);
     try {
-      const response = await fetch(`http://192.168.137.1:4000/auth/log-in`, {
+      const response = await fetch(`${process.env.EXPO_BASE_URL}/auth/log-in`, {
         method: 'POST',
         headers: {
-          'Content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+        body: JSON.stringify({ email, password }),
       });
+
       const result = await response.json();
+
       if (response.ok) {
         return result.user;
       } else {
-        Alert.alert('Error', result.message || 'Login Failed');
+        // Ensure the error message is a string
+        const errorMessage = Array.isArray(result.message)
+          ? result.message.join(', ')
+          : result.message || 'Login Failed';
+        Alert.alert('Error', errorMessage);
       }
     } catch (error) {
-      console.log(error);
+      console.error('Login error:', error);
       Alert.alert('Error', 'Network request failed');
       return null;
     } finally {
