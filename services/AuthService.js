@@ -12,7 +12,6 @@ export const initUserTable = async () => {
         isActive INTEGER DEFAULT 1
       );
     `);
-
     console.log('✅ User table created successfully');
   } catch (error) {
     console.error('❌ Failed to create user table:', error);

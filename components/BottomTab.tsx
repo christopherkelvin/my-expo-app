@@ -48,7 +48,13 @@ export function BottomTab({ state, descriptors, navigation }: BottomTabBarProps)
             ? options.tabBarLabel
             : options.title !== undefined
               ? options.title
-              : route.name;
+              : route.name === 'home'
+                ? 'Nyumbani'
+                : route.name === 'advisor'
+                  ? 'Mshauri'
+                  : route.name === 'history'
+                    ? 'Historia'
+                    : route.name;
 
         const isFocused = state.index === index;
 

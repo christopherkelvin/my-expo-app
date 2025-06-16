@@ -45,6 +45,7 @@ export const Login = ({ navigation }: LoginScreenProps) => {
       />
       <TextInput
         placeholder="Password"
+        secureTextEntry={true}
         className=" h-14 rounded-3xl bg-white pl-5 text-lg"
         onChangeText={(text) => setPassword(text)}
       />
@@ -53,7 +54,7 @@ export const Login = ({ navigation }: LoginScreenProps) => {
       ) : (
         <TouchableOpacity
           className="h-14 items-center justify-center rounded-3xl bg-main"
-          onPress={() => LoginUser(email, password)}>
+          onPress={() => handleLogin()}>
           <Text className="font-nunito-bold text-2xl text-secondary">Ingia</Text>
         </TouchableOpacity>
       )}

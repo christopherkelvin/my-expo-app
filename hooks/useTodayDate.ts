@@ -20,7 +20,7 @@ export const UseTodayDate = () => {
     const day = date.getDate();
     const month = months[date.getMonth()];
 
-    return `Today ${day} ${month}`;
+    return `Leo ${day} ${month}`;
   }
   return formatDate(date);
 };

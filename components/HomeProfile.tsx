@@ -2,13 +2,12 @@ import Feather from '@expo/vector-icons/Feather';
 import { UseTodayDate } from 'hooks/useTodayDate';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 
-import avator from '../assets/profile.jpg';
+import avator from '../assets/DefaultProfile.png';
 import colors from '../constants/colors';
 interface HomeProfileProps {
-  userName: string;
   navigation: any;
 }
-export const HomeProfile = ({ userName, navigation }: HomeProfileProps) => {
+export const HomeProfile = ({ navigation }: HomeProfileProps) => {
   const useTodayDate: string = UseTodayDate();
   return (
     <View className="mx-5 my-5 flex-row items-center justify-between rounded-3xl bg-primary/80 p-2">
@@ -17,7 +16,7 @@ export const HomeProfile = ({ userName, navigation }: HomeProfileProps) => {
         className="h-14 w-14 overflow-hidden rounded-full border border-secondary"
       />
       <View className="flex flex-col items-center ">
-        <Text className="font-nunito-bold text-secondary">Habari 😊 , {userName}</Text>
+        <Text className="font-nunito-bold text-secondary">Habari 😊</Text>
         <Text className="text-secondary">{useTodayDate}</Text>
       </View>
       <TouchableOpacity onPress={() => navigation.navigate('Setting')}>

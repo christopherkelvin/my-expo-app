@@ -16,7 +16,7 @@ import { LoginScreen } from 'screens/loginScreen';
 import { RegisterScreen } from 'screens/registerScreen';
 import { useEffect } from 'react';
 import { initUserTable } from './services/AuthService'; 
-import {deleteUserTable} from './services/UserService'
+import {deleteUserTable} from './services/UserService';
 
 
 export default function App() {
