@@ -37,7 +37,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
   return (
     <View style={{ backgroundColor: colors.secondary, height: windowHeight }}>
       <WaveSvg />
-      <HomeProfile userName={userDetails[0]?.name} navigation={navigation} />
+      <HomeProfile navigation={navigation} />
       <FlatList
         ref={flatListRef}
         data={AdvertisementData}

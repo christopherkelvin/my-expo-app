@@ -12,7 +12,7 @@ export const AdvertisementData: advertisementType[] = [
   },
   {
     id: 2,
-    image: Image1,
+    image: Image2,
     question: 'Je, mazao yako ya nyanya yanakufa?',
     solution: 'Jaribu mshauri huyu',
   },

@@ -1,28 +1,27 @@
 import { SettingsContent } from 'components/SettingsContent';
-import { useUserDetails } from 'hooks/useDetails';
 import { Text, View, Image, Dimensions, TouchableOpacity } from 'react-native';
 
-import avator from '../assets/profile.jpg';
+import avator from '../assets/DefaultProfile.png';
+import { useActiveUser } from 'hooks/useActiveUser';
+
+type User = {
+  email?: string;
+};
 
 export const SettingScreen = () => {
   const windowWidth = Dimensions.get('window').width;
-  const userDetails = useUserDetails();
+  const user = useActiveUser() as User | null;
 
   return (
     <View>
-      <View className="flex items-center justify-center">
+      <View className="flex items-center justify-center mb-4">
         <Image
           source={avator}
           className="rounded-full"
           style={{ width: windowWidth * 0.3, height: windowWidth * 0.3, marginTop: 20 }}
         />
-        <Text className="font-nunito-bold text-2xl">{userDetails[0]?.name}</Text>
-        <Text className="text-primary">{userDetails[0]?.email}</Text>
-        <TouchableOpacity
-          className=" bg-primary"
-          style={{ marginTop: 10, padding: 12, borderRadius: 20 }}>
-          <Text className=" text-secondary">Edit Profile</Text>
-        </TouchableOpacity>
+        {/* <Text className="font-nunito-bold text-2xl">name</Text> */}
+        <Text className="text-primary">{user ? user.email : 'No email found'}</Text>
       </View>
       <SettingsContent />
     </View>
